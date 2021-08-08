@@ -1,5 +1,5 @@
-# This workflow will build a Java project with Maven
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+## This workflow will build a Java project with Maven
+## For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
 name: Java CI with Maven
 
@@ -21,6 +21,7 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
+    - name: Test with Maven
+      run: mvn -B test --file ccr/pom.xml
     - name: Build with Maven
-      run: mvn -B clean --file ccr/pom.xml; mvn -B package --file ccr/pom.xml;
-      #run: mvn -B package --file ccr/pom.xml
+      run: mvn -B clean --file ccr/pom.xml; mvn -B package --file ccr/pom.xml
